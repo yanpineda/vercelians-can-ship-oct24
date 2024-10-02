@@ -130,4 +130,19 @@ export default function Component() {
                     x={x}
                     y={y}
                     item={cell}
-                    rotation={rotations[`${x},${y}`]
+                    rotation={rotations[`${x},${y}`] || 0}
+                    removeItem={removeItem}
+                  />
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="mt-4">
+          <Label htmlFor="room-name">Room Name</Label>
+          <Input id="room-name" placeholder="Enter room name" className="max-w-sm" />
+        </div>
+      </div>
+    </DndProvider>
+  )
+}
