@@ -84,7 +84,7 @@ const RoomFeatureItem = ({ type, placeFeature }) => {
 const GridCell = ({ x, y, item, removeItem, cellSize }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'furniture',
-    drop: (droppedItem) => ({ x, y, item: droppedItem.type }),
+   //#region  drop: (droppedItem) => ({ x, y, item: droppedItem.type }),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
@@ -117,7 +117,7 @@ const Room3D = ({ roomSize, furniture, walls, doors, windows, sockets }) => {
 
   useFrame(() => {
     if (roomRef.current) {
-      roomRef.current.rotation.y += 0.005
+  
     }
   })
 
@@ -372,7 +372,7 @@ export default function Component() {
           <Label htmlFor="room-name">Room Name</Label>
           <Input 
             id="room-name" 
-            placeholder="Enter room name" 
+           
             className="max-w-sm"
             value={roomName}
             onChange={(e) => setRoomName(e.target.value)}
